@@ -8,11 +8,11 @@ import javax.swing.table.DefaultTableModel;
 /*
  * @author RafaelRCA
  */
-public class A1 extends javax.swing.JFrame {
+public class A2 extends javax.swing.JFrame {
 DefaultTableModel modelo1;
 DefaultTableModel modelo2;    
 
-    public A1() {
+    public A2() {
         
         initComponents();
         this.setLocationRelativeTo(null);
@@ -234,7 +234,7 @@ DefaultTableModel modelo2;
     try {
         llenaTabla();
     } catch (IOException ex) {
-        Logger.getLogger(A1.class.getName()).log(Level.SEVERE, null, ex);
+        Logger.getLogger(A2.class.getName()).log(Level.SEVERE, null, ex);
     }
     }//GEN-LAST:event_abrirActionPerformed
 
@@ -282,20 +282,21 @@ DefaultTableModel modelo2;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(A1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(A2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(A1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(A2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(A1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(A2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(A1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(A2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new A1().setVisible(true);
+                new A2().setVisible(true);
             }
         });
     }

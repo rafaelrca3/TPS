@@ -217,37 +217,7 @@ DefaultTableModel modelo2;
 
     
     private void guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarActionPerformed
-try{
-
-        BufferedWriter bw1 = null, bw2=null;
-        File fl1 = new File("/Users/RafaelRCA/Desktop/Pasajeros.txt");
-        File fl2 = new File("/Users/RafaelRCA/Desktop/Vuelos.txt");
-        //File fl1 = new File("Pasajeros.txt");
-        //File fl2 = new File("Vuelos.txt");
-        bw1 = new BufferedWriter(new FileWriter(fl1));
-        bw2 = new BufferedWriter(new FileWriter(fl2));
-        /*Pasajeros*/
-        for(int nrow1=0; nrow1<jTable1.getRowCount(); nrow1++){
-            for(int ncolm1=0; ncolm1<jTable1.getColumnCount(); ncolm1++){
-                String dat1=jTable1.getValueAt(nrow1, ncolm1).toString();
-                bw1.append(dat1+"\t");
-            } 
-            bw1.append("\n");
-        }
-         bw1.close();
-        /*Vuelos*/
-        for(int nrow2=0; nrow2<jTable2.getRowCount(); nrow2++){
-            for(int ncolm2=0; ncolm2<jTable2.getColumnCount(); ncolm2++){
-                String dat2=jTable2.getValueAt(nrow2, ncolm2).toString();
-                bw2.append(dat2+"\t"); 
-            }  
-            bw2.append("\n");
-        }
-         bw2.close();
-         JOptionPane.showMessageDialog(null, "Se guardo correctamente.");
-        }catch(Exception ex){
-            JOptionPane.showMessageDialog(null, "No se guardo. ERROR: "+ex);
-        }
+        guardar();
     }//GEN-LAST:event_guardarActionPerformed
 
     private void cerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarActionPerformed
@@ -273,7 +243,6 @@ try{
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
         limpiar();
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -363,8 +332,8 @@ try{
     }
     
     public void llenaTabla() throws FileNotFoundException, IOException{
-        FileReader fr1 = new FileReader("/Users/RafaelRCA/Desktop/Pasajeros.txt");
-        FileReader fr2 = new FileReader("/Users/RafaelRCA/Desktop/Vuelos.txt");
+        FileReader fr1 = new FileReader("Pasajeros.txt");
+        FileReader fr2 = new FileReader("Vuelos.txt");
         BufferedReader bfr1 = new BufferedReader(fr1);
         BufferedReader bfr2 = new BufferedReader(fr2);
         String lin1 ="";
@@ -388,6 +357,35 @@ try{
                 }
                 rv++;
             }
+    }
+    
+    public void guardar(){
+        try{
+            BufferedWriter bw1 = null, bw2=null;
+            File fl1 = new File("Pasajeros.txt");
+            File fl2 = new File("Vuelos.txt");
+            bw1 = new BufferedWriter(new FileWriter(fl1));
+            bw2 = new BufferedWriter(new FileWriter(fl2));
+        
+            for(int nrow1=0; nrow1<jTable1.getRowCount(); nrow1++){
+                for(int ncolm1=0; ncolm1<jTable1.getColumnCount(); ncolm1++){
+                String dat1=jTable1.getValueAt(nrow1, ncolm1).toString();
+                bw1.append(dat1+"\t");
+                } 
+                bw1.append("\n");
+            }
+            bw1.close();
+        
+            for(int nrow2=0; nrow2<jTable2.getRowCount(); nrow2++){
+                for(int ncolm2=0; ncolm2<jTable2.getColumnCount(); ncolm2++){
+                String dat2=jTable2.getValueAt(nrow2, ncolm2).toString();
+                bw2.append(dat2+"\t"); 
+                }  
+                bw2.append("\n");
+            }
+            bw2.close();
+         JOptionPane.showMessageDialog(null, "Se guardo correctamente.");
+        }catch(Exception ex){JOptionPane.showMessageDialog(null, "No se guardo. ERROR: "+ex);}
     }
     /************/
     

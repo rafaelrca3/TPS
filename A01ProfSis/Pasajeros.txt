@@ -1,4 +1,4 @@
-NOM11	APE11	11	R11	X11	A-1	
-NOM22	APE22	22	R22	X22	A-2	
-NOM33	APE33	33	R33	X33	A-3	
-fsd	ffs	f	gg	rr	gg	
+Viridiana	Valdez	26	GDL	MDW	08	
+Aurora	Amaral	38	MEX	OAK	16	
+Julio	Ramirez	24	MEX	LHR	32	
+Rafael	Castillo	24	QWE	YTR	36	
